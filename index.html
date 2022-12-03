@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+введите шифр<br>	
+<input type="text" class="M" name="color"><br>
+Генерируется случайное простое число p.<br>
+<input type="text" class="P" name="color"><br>
+Выбирается случайное простое число q<br>
+<input type="text" class="Q" name="color"><br>Выбирается случайное простое Е:<br>
+<input type="text" class="E" name="color"><br>
+<input type="button" name="color_ok" value="ok" onclick="shifr()"><br>
+<input type="text" class="res" name="color"><br>
+<script type="text/javascript">
+	function shifr() {
+		var p = document.querySelector(".P").value;
+		var q = document.querySelector(".Q").value;
+		var C = document.querySelector(".M").value;
+		var e = document.querySelector(".E").value;
+		var N = p*q;
+		var g = ((p-1)*(q-1));
+		var flag = true;
+		for (var i = 2; i < g; i++ ){
+			if(e%i!=0 && g%i!=0){
+				d = e%N;
+				var res = (C**d)%N;
+				flag = false;
+				break;
+			}
+			
+		}
+		if(flag){document.writeln("неверое е")}
+		
+		console.log("ВВеденные значения");
+		console.log(p);
+		console.log(q);
+		console.log(C);
+		console.log(d);	
+		console.log("расшифр")
+		console.log(res)
+		document.querySelector(".res").value = res;
+	}
+	
+</script>
+</body>
+</html>
